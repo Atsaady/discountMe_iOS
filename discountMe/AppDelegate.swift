@@ -8,14 +8,17 @@
 import UIKit
 import Firebase
 
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        Thread.sleep(forTimeInterval: 0.2) // Showing the LaunchScreen for longer.
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        Utilities.clearNavBar()
         return true
     }
 
