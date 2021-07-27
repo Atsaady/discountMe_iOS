@@ -126,7 +126,7 @@
                                         </constraints>
                                         <state key="normal" title="Sign Up"/>
                                         <connections>
-                                            <segue destination="Qgn-Md-DhN" kind="show" id="jRv-ul-zKT"/>
+                                            <action selector="signUpTapped:" destination="Q7x-7b-YkK" eventType="touchUpInside" id="jgp-FQ-VdW"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error in Sign Up..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y82-5q-w8M">
@@ -224,7 +224,7 @@
                                         <state key="normal" title="Login"/>
                                         <connections>
                                             <action selector="loginButton:" destination="szK-Yd-rhe" eventType="touchUpInside" id="fk3-tS-q8K"/>
-                                            <segue destination="Qgn-Md-DhN" kind="show" id="hx8-KD-3s4"/>
+                                            <action selector="loginTapped:" destination="4pt-8t-n7u" eventType="touchUpInside" id="hT7-GO-WU0"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error logging in..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JeA-MT-UE2">
@@ -264,7 +264,7 @@
         <!--Home Tab Bar Controller-->
         <scene sceneID="ZEQ-Qr-vsb">
             <objects>
-                <tabBarController title="Home Tab Bar Controller" id="Qgn-Md-DhN" customClass="HomeTabBarController" customModule="discountMe" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="HomeTabBarController" title="Home Tab Bar Controller" id="Qgn-Md-DhN" customClass="HomeTabBarController" customModule="discountMe" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="224-pM-SxO"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eRW-PY-mMi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -282,7 +282,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Lj-Zr-nbz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="326" y="5"/>
+            <point key="canvasLocation" x="126" y="5"/>
         </scene>
         <!--HomeFeed-->
         <scene sceneID="0gb-8a-bZb">
@@ -292,7 +292,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FCh-jz-yII" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="866" y="-44"/>
+            <point key="canvasLocation" x="740" y="-94"/>
         </scene>
         <!--Profile-->
         <scene sceneID="NfD-7K-VuX">
@@ -302,7 +302,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RQl-n8-tJa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="848" y="58"/>
+            <point key="canvasLocation" x="720" y="29"/>
         </scene>
         <!--Favorites-->
         <scene sceneID="4gn-Pz-qJP">
@@ -312,7 +312,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YCf-aM-Yzg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="859" y="24"/>
+            <point key="canvasLocation" x="732" y="-17"/>
         </scene>
         <!--AddDeal-->
         <scene sceneID="Mc1-Nm-hWr">
@@ -322,12 +322,9 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a9i-mw-wrJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="856" y="-13"/>
+            <point key="canvasLocation" x="728" y="-61"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="jRv-ul-zKT"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="app_logo.png" width="150" height="150"/>
         <image name="background.png" width="750" height="1334"/>

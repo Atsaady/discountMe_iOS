@@ -43,7 +43,7 @@ class SignUpViewController: UIViewController {
         Utilities.styleTextField(lastNameTextField)
         Utilities.styleTextField(emailTextField)
         Utilities.styleTextField(passwordTextField)
-        Utilities.styleFilledButton(signUpButton)
+        Utilities.styleFilledHomeButton(signUpButton)
         
     }
     // Check the fields and validate that the data is correct. If everything is correct, this method return nil. Otherwise, it returns the error message.
@@ -71,6 +71,7 @@ class SignUpViewController: UIViewController {
 
     @IBAction func signUpTapped(_ sender: Any) {
         
+        let user = User()
         // Validate the fields
         let error = validateFields()
         if error != nil {
@@ -78,12 +79,12 @@ class SignUpViewController: UIViewController {
             showError(error!)
         } else {
             
-            let firstName = firstNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-            let lastName = lastNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-            let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-            let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            user.firstName = firstNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            user.lastName = lastNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            user.email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            user.password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             
-            Auth.auth().createUser(withEmail: email, password: password) { (result, err) in
+            Auth.auth().createUser(withEmail: user.email!, password: user.password!) { (result, err) in
                 // Check for errors
                 if err != nil {
                     // There was an error creating the user
@@ -92,12 +93,14 @@ class SignUpViewController: UIViewController {
                     
                     // User was created successfully, now store the first name and last name
                     let db = Firestore.firestore()
-                    db.collection("users").addDocument(data: ["firstName": firstName,
-                      "lastName": lastName, "uid": result!.user.uid]){ (error) in
+                    db.collection("users").addDocument(data: ["firstName": user.firstName!,
+                      "lastName": user.lastName!, "uid": result!.user.uid]){ (error) in
                         if error != nil {
                             // Show error message
                             self.showError("An error was occurred while saving user data. Try again later")
                         }
+                        user.id = result!.user.uid
+                        // TODO Add user to user list
                     }
                     // Transition to the home screen
                     self.transitionToHome()

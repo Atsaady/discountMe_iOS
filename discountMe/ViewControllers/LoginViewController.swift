@@ -38,7 +38,7 @@ class LoginViewController: UIViewController {
         // Style the elements
         Utilities.styleTextField(emailTextField)
         Utilities.styleTextField(passwordTextField)
-        Utilities.styleFilledButton(loginButton)
+        Utilities.styleFilledHomeButton(loginButton)
         
     }
 
@@ -96,7 +96,7 @@ class LoginViewController: UIViewController {
     
     func transitionToHome(){
         
-        let homeTabBarController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeTabBarController) as? HomeTabBarController
+        let homeTabBarController = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.homeTabBarController) as? HomeTabBarController
         
         view.window?.rootViewController = homeTabBarController
         view.window?.makeKeyAndVisible()

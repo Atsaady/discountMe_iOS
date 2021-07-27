@@ -39,23 +39,104 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PngItem_6619328" translatesAutoresizingMaskIntoConstraints="NO" id="hKW-Ia-4Be">
+                                <rect key="frame" x="20" y="154" width="374" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="yCK-nG-1VB"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add A Deal" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FXh-UP-FNt">
+                                <rect key="frame" x="20" y="98" width="374" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Deal Headline " textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Tp-hz-JC5">
+                                <rect key="frame" x="20" y="374" width="374" height="30"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.4960656577" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="sD9-5T-KU2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" placeholder="Description" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eYh-Xg-BHK">
+                                <rect key="frame" x="20" y="424" width="374" height="200"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.4960656577" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="HKG-Dm-Jt5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ly-hQ-dR7">
+                                <rect key="frame" x="20" y="723" width="374" height="50"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.4960656577" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="sHj-1i-nQ2"/>
+                                </constraints>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="onTapAddDeal:" destination="pje-ZI-Pff" eventType="touchUpInside" id="uix-be-UmL"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please fill in all fields." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IfU-Cg-Cas">
+                                <rect key="frame" x="20" y="778" width="374" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="mSq-VY-PeQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KrW-gV-t0I"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hKW-Ia-4Be" firstAttribute="leading" secondItem="KrW-gV-t0I" secondAttribute="leading" constant="20" id="09x-oC-eSz"/>
+                            <constraint firstItem="FXh-UP-FNt" firstAttribute="leading" secondItem="KrW-gV-t0I" secondAttribute="leading" constant="20" id="Ce1-El-NlX"/>
+                            <constraint firstItem="6Ly-hQ-dR7" firstAttribute="leading" secondItem="KrW-gV-t0I" secondAttribute="leading" constant="20" id="EKH-V9-YIL"/>
+                            <constraint firstItem="eYh-Xg-BHK" firstAttribute="leading" secondItem="KrW-gV-t0I" secondAttribute="leading" constant="20" id="Jok-my-SW8"/>
+                            <constraint firstItem="7Tp-hz-JC5" firstAttribute="leading" secondItem="KrW-gV-t0I" secondAttribute="leading" constant="20" id="K7L-0R-UtF"/>
+                            <constraint firstItem="7Tp-hz-JC5" firstAttribute="top" secondItem="hKW-Ia-4Be" secondAttribute="bottom" constant="20" id="VIS-JU-s1x"/>
+                            <constraint firstItem="FXh-UP-FNt" firstAttribute="top" secondItem="KrW-gV-t0I" secondAttribute="top" constant="10" id="X9E-Fe-nS5"/>
+                            <constraint firstItem="IfU-Cg-Cas" firstAttribute="top" secondItem="6Ly-hQ-dR7" secondAttribute="bottom" constant="5" id="YCg-Ps-1Xd"/>
+                            <constraint firstItem="KrW-gV-t0I" firstAttribute="trailing" secondItem="FXh-UP-FNt" secondAttribute="trailing" constant="20" id="ga4-Ir-Xnr"/>
+                            <constraint firstItem="KrW-gV-t0I" firstAttribute="trailing" secondItem="hKW-Ia-4Be" secondAttribute="trailing" constant="20" id="hQn-9a-ed1"/>
+                            <constraint firstItem="KrW-gV-t0I" firstAttribute="trailing" secondItem="6Ly-hQ-dR7" secondAttribute="trailing" constant="20" id="msL-Ub-xCm"/>
+                            <constraint firstItem="hKW-Ia-4Be" firstAttribute="top" secondItem="FXh-UP-FNt" secondAttribute="bottom" constant="20" id="n9O-ZF-Qgc"/>
+                            <constraint firstItem="KrW-gV-t0I" firstAttribute="trailing" secondItem="eYh-Xg-BHK" secondAttribute="trailing" constant="20" id="nRE-Ou-gVL"/>
+                            <constraint firstItem="KrW-gV-t0I" firstAttribute="trailing" secondItem="IfU-Cg-Cas" secondAttribute="trailing" constant="20" id="oAt-BB-0KA"/>
+                            <constraint firstItem="KrW-gV-t0I" firstAttribute="bottom" secondItem="6Ly-hQ-dR7" secondAttribute="bottom" constant="40" id="oWf-id-OLL"/>
+                            <constraint firstItem="IfU-Cg-Cas" firstAttribute="leading" secondItem="KrW-gV-t0I" secondAttribute="leading" constant="20" id="pAL-7z-dne"/>
+                            <constraint firstItem="KrW-gV-t0I" firstAttribute="trailing" secondItem="7Tp-hz-JC5" secondAttribute="trailing" constant="20" id="uSq-ny-kH7"/>
+                            <constraint firstItem="eYh-Xg-BHK" firstAttribute="top" secondItem="7Tp-hz-JC5" secondAttribute="bottom" constant="20" id="y6b-ar-2gK"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Add Deal" image="icons8-add-30" id="pn4-qm-2Zl"/>
                     <navigationItem key="navigationItem" id="ofv-hl-y2J"/>
+                    <connections>
+                        <outlet property="addDealButton" destination="6Ly-hQ-dR7" id="u5B-b9-T0K"/>
+                        <outlet property="addDealImageView" destination="hKW-Ia-4Be" id="6U8-XD-8aq"/>
+                        <outlet property="descriptionTextField" destination="eYh-Xg-BHK" id="jTJ-Rx-hlO"/>
+                        <outlet property="errorLabel" destination="IfU-Cg-Cas" id="gde-sr-93n"/>
+                        <outlet property="headlineTextField" destination="7Tp-hz-JC5" id="zfY-nd-DpJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YEL-BW-PRO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="291" y="254"/>
+            <point key="canvasLocation" x="289.85507246376812" y="253.79464285714283"/>
         </scene>
     </scenes>
     <resources>
+        <image name="PngItem_6619328" width="916" height="917"/>
         <image name="background.png" width="750" height="1334"/>
         <image name="icons8-add-30" width="30" height="30"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

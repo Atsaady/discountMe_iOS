@@ -7,23 +7,43 @@
 
 import UIKit
 
-class FavoritesViewController: UIViewController {
+class FavoritesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet weak var favoritesTableView: UITableView!
+    
+    var data = [Favorite]()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        super .viewWillAppear(animated)
+        data = Model.instance.getAllFavorites()
+        favoritesTableView.reloadData()
     }
-    */
+    
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return data.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = favoritesTableView.dequeueReusableCell(withIdentifier: "FavoritesRow", for: indexPath) as! TableViewCell
+        let favorite = data[indexPath.row]
+        cell.dealNameLabel.text = favorite.headline
+        cell.idLabel.text = "100" + String(indexPath.row)
+        cell.descriptionLabel.text = favorite.description
+        return cell
+    }
+    
 
 }

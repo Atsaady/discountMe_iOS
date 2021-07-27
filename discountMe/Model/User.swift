@@ -8,10 +8,10 @@
 import Foundation
 
 class User {
-
-    var id: String?
-    var firstName: String?
-    var lastName: String?
-    var email: String?
-    var password: String?
+    var id:         String?
+    var firstName:  String?
+    var lastName:   String?
+    var email:      String?
+    var password:   String?
+    var imageUrl:   String?
 }

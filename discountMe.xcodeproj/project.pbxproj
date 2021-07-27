@@ -16,6 +16,11 @@
 		2628DC6026A9C24800C636FF /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2628DC5F26A9C24800C636FF /* Profile.storyboard */; };
 		2628DC6226A9C25400C636FF /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2628DC6126A9C25400C636FF /* Favorites.storyboard */; };
 		2628DC6426A9C27600C636FF /* AddDeal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2628DC6326A9C27600C636FF /* AddDeal.storyboard */; };
+		2628DC6926AC565500C636FF /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2628DC6826AC565500C636FF /* TableViewCell.swift */; };
+		2628DC6B26AC69D200C636FF /* Deal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2628DC6A26AC69D200C636FF /* Deal.swift */; };
+		2628DC6E26AC6AEC00C636FF /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2628DC6C26AC6AEC00C636FF /* Model.xcdatamodeld */; };
+		2628DC7026ACE12900C636FF /* ExpandedDealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2628DC6F26ACE12900C636FF /* ExpandedDealViewController.swift */; };
+		2628DC7226ACEFA000C636FF /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2628DC7126ACEFA000C636FF /* Favorite.swift */; };
 		267CBBA8267A7312007C3B03 /* app_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 267CBBA7267A7312007C3B03 /* app_logo.png */; };
 		267CBBAA267A7406007C3B03 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267CBBA9267A7406007C3B03 /* User.swift */; };
 		267CBBAC267A74B4007C3B03 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267CBBAB267A74B4007C3B03 /* ViewController.swift */; };
@@ -65,6 +70,11 @@
 		2628DC5F26A9C24800C636FF /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		2628DC6126A9C25400C636FF /* Favorites.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Favorites.storyboard; sourceTree = "<group>"; };
 		2628DC6326A9C27600C636FF /* AddDeal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddDeal.storyboard; sourceTree = "<group>"; };
+		2628DC6826AC565500C636FF /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		2628DC6A26AC69D200C636FF /* Deal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deal.swift; sourceTree = "<group>"; };
+		2628DC6D26AC6AEC00C636FF /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		2628DC6F26ACE12900C636FF /* ExpandedDealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedDealViewController.swift; sourceTree = "<group>"; };
+		2628DC7126ACEFA000C636FF /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
 		267CBBA7267A7312007C3B03 /* app_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_logo.png; sourceTree = "<group>"; };
 		267CBBA9267A7406007C3B03 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		267CBBAB267A74B4007C3B03 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = discountMe/ViewControllers/ViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -143,11 +153,11 @@
 				267CBBAB267A74B4007C3B03 /* ViewController.swift */,
 				262048542699BB91002A267F /* SignUpViewController.swift */,
 				262048572699BBA9002A267F /* LoginViewController.swift */,
-				269A94D626A6D8A300B4E30A /* HomeTabBarController.swift */,
 				269A94D826A6DDBB00B4E30A /* ProfileViewController.swift */,
 				269A94DA26A6DDDB00B4E30A /* HomeViewController.swift */,
 				269A94DC26A6E14D00B4E30A /* FavoritesViewController.swift */,
 				269A94DE26A6E16400B4E30A /* AddDealViewController.swift */,
+				2628DC6F26ACE12900C636FF /* ExpandedDealViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -174,11 +184,22 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
+		2628DC6626AC55B000C636FF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				269A94D626A6D8A300B4E30A /* HomeTabBarController.swift */,
+				2628DC6826AC565500C636FF /* TableViewCell.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		267CBBA6267A5F24007C3B03 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				2620485F2699F819002A267F /* Model.swift */,
 				267CBBA9267A7406007C3B03 /* User.swift */,
+				2628DC6A26AC69D200C636FF /* Deal.swift */,
+				2628DC7126ACEFA000C636FF /* Favorite.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -212,12 +233,14 @@
 				26C147482677548B0085E7C5 /* SceneDelegate.swift */,
 				267CBBA6267A5F24007C3B03 /* Model */,
 				2620485C2699E867002A267F /* Utils */,
+				2628DC6626AC55B000C636FF /* Controllers */,
 				2620485B2699BBD3002A267F /* ViewControllers */,
 				2628DC6526A9C28300C636FF /* Storyboards */,
 				26FCEB8726776C9E00E793C6 /* resources */,
 				26C1474F2677548E0085E7C5 /* Assets.xcassets */,
 				26C14776267764B40085E7C5 /* GoogleService-Info.plist */,
 				26C147542677548E0085E7C5 /* Info.plist */,
+				2628DC6C26AC6AEC00C636FF /* Model.xcdatamodeld */,
 			);
 			path = discountMe;
 			sourceTree = "<group>";
@@ -512,11 +535,16 @@
 				262048582699BBA9002A267F /* LoginViewController.swift in Sources */,
 				267CBBAA267A7406007C3B03 /* User.swift in Sources */,
 				26C147472677548B0085E7C5 /* AppDelegate.swift in Sources */,
+				2628DC6926AC565500C636FF /* TableViewCell.swift in Sources */,
+				2628DC7026ACE12900C636FF /* ExpandedDealViewController.swift in Sources */,
 				269A94D726A6D8A300B4E30A /* HomeTabBarController.swift in Sources */,
 				267CBBAC267A74B4007C3B03 /* ViewController.swift in Sources */,
+				2628DC6E26AC6AEC00C636FF /* Model.xcdatamodeld in Sources */,
 				269A94D926A6DDBB00B4E30A /* ProfileViewController.swift in Sources */,
+				2628DC7226ACEFA000C636FF /* Favorite.swift in Sources */,
 				26204862269A04E0002A267F /* Constants.swift in Sources */,
 				26C147492677548B0085E7C5 /* SceneDelegate.swift in Sources */,
+				2628DC6B26AC69D200C636FF /* Deal.swift in Sources */,
 				269A94DF26A6E16400B4E30A /* AddDealViewController.swift in Sources */,
 				2620485E2699E9BE002A267F /* Utilities.swift in Sources */,
 				262048552699BB91002A267F /* SignUpViewController.swift in Sources */,
@@ -855,6 +883,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2628DC6C26AC6AEC00C636FF /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2628DC6D26AC6AEC00C636FF /* Model.xcdatamodel */,
+			);
+			currentVersion = 2628DC6D26AC6AEC00C636FF /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 26C1473B2677548B0085E7C5 /* Project object */;
 }
