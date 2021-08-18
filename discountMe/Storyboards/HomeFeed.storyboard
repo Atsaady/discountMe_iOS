@@ -55,8 +55,7 @@
                                                         <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="onTapDealExpand:" destination="wtz-f1-RKi" eventType="touchUpInside" id="Ara-no-ZPV"/>
-                                                        <segue destination="QTP-x6-o1a" kind="show" id="3o1-TV-sy7"/>
+                                                        <action selector="onTapDealExpand:" destination="6vo-JS-PCy" eventType="touchUpInside" id="Kpp-lW-gWr"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="id" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ufj-vl-2Ht">
@@ -118,7 +117,7 @@
                             <constraint firstItem="mOQ-yw-hvM" firstAttribute="top" secondItem="F2v-21-s4P" secondAttribute="top" id="ykx-WM-lzM"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="icons8-home-page-30" id="fy2-3x-y61">
+                    <tabBarItem key="tabBarItem" tag="1" title="Home" image="icons8-home-page-30" id="fy2-3x-y61">
                         <color key="badgeColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                     <navigationItem key="navigationItem" id="QYH-9Z-Gwl"/>
@@ -130,10 +129,10 @@
             </objects>
             <point key="canvasLocation" x="1082.608695652174" y="-670.3125"/>
         </scene>
-        <!--Expanded Deal View Controller-->
+        <!--ExpandedDealViewController-->
         <scene sceneID="Edx-HY-DuS">
             <objects>
-                <viewController storyboardIdentifier="ExpandedDealViewController" id="QTP-x6-o1a" customClass="ExpandedDealViewController" customModule="discountMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="expanded" title="ExpandedDealViewController" id="QTP-x6-o1a" customClass="ExpandedDealViewController" customModule="discountMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="G9t-V6-RrI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -144,7 +143,7 @@
                                 <gestureRecognizers/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eFb-lN-Kn6">
-                                <rect key="frame" x="50" y="138" width="314" height="625"/>
+                                <rect key="frame" x="50" y="94" width="314" height="718"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PngItem_6619328" translatesAutoresizingMaskIntoConstraints="NO" id="EM0-cj-zWp">
                                         <rect key="frame" x="32" y="20" width="250" height="250"/>
@@ -166,7 +165,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="te9-Sx-OeL">
-                                        <rect key="frame" x="10" y="575" width="294" height="40"/>
+                                        <rect key="frame" x="10" y="668" width="294" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="XtL-PG-6Zq"/>
                                         </constraints>
@@ -221,7 +220,7 @@
         <scene sceneID="Rjk-gf-ttW">
             <objects>
                 <navigationController id="Z5z-hz-Nbn" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="icons8-home-page-30" id="2cV-tV-fdU"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="Home" image="icons8-home-page-30" id="2cV-tV-fdU"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="cLe-zA-Zdm">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -241,7 +240,7 @@
         <image name="background.png" width="750" height="1334"/>
         <image name="icons8-add-to-favorites-30" width="30" height="30"/>
         <image name="icons8-home-page-30" width="30" height="30"/>
-        <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="plus" catalog="system" width="32" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -17,7 +17,5 @@ class HomeTabBarController: UITabBarController {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
-    
-    
-    
 }
+

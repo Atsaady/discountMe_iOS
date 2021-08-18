@@ -15,5 +15,10 @@ struct Constants {
         static let homeViewController =  "HomeViewController"
         static let profileViewController = "ProfileViewController"
         static let addDealViewController = "AddDealViewController"
+        static let expandedDealViewController = "ExpandedDealViewController"
     }
+    
+    static var uid = ""
+    static var dealId = ""
+
 }

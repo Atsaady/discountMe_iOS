@@ -31,16 +31,14 @@ class AddDealViewController: UIViewController {
     
     
     @IBAction func onTapAddDeal(_ sender: Any) {
-        let deal = Deal()
         let error = validateFields()
         if error != nil {
             showError(error!)
         } else {
-            deal.imageUrl = "continue"
-            deal.headline = headlineTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-            deal.description = descriptionTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let deal = Deal.create(id: Utilities.generateId(), headline: headlineTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines), dealDescriiption: descriptionTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines), imageUrl: "")
             Model.instance.addDeal(deal: deal)
-            
+            headlineTextField.text = ""
+            descriptionTextField.text = ""
         }
     }
     
@@ -65,8 +63,4 @@ class AddDealViewController: UIViewController {
         errorLabel.alpha = 1
     }
     
-    func transitionToHome(){
-        
-        _ = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.homeViewController) as? HomeViewController
-    }
 }

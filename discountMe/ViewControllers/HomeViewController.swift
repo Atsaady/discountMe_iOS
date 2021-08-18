@@ -12,12 +12,15 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var homeFeedTableView: UITableView!
     
     var data = [Deal]()
+    var deal = Deal()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-//        self.reloadData()
+        
     }
+    
+
     
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
@@ -25,6 +28,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         homeFeedTableView.reloadData()
     }
     
+    
+
 
     // UITableViewDelegate protocol
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -39,13 +44,23 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = homeFeedTableView.dequeueReusableCell(withIdentifier: "HomeFeedRow", for: indexPath) as! TableViewCell
-        let deal = data[indexPath.row]
-        cell.dealNameLabel.text = deal.headline
-        cell.idLabel.text = "100" + String(indexPath.row)
-        cell.descriptionLabel.text = deal.description
+        let tmpDeal = data[indexPath.row]
+        cell.dealNameLabel.text = tmpDeal.headline
+        cell.idLabel.text = tmpDeal.id
+        cell.descriptionLabel.text = tmpDeal.dealDescription
+        deal = tmpDeal
+        deal.id = cell.idLabel.text
         
         return cell
     }
+
+    @IBAction func onTapDealExpand(_ sender: Any) {
+        let expandedVC = storyboard?.instantiateViewController(identifier: "expanded") as! ExpandedDealViewController
+        present(expandedVC, animated: true)
+        NotificationCenter.default.post(name: Notification.Name("headline"), object: Model.instance.getDealById(id: deal.id!)?.headline)
+        NotificationCenter.default.post(name: Notification.Name("description"), object: Model.instance.getDealById(id: deal.id!)?.dealDescription)
+    }
+    
     
 // RELOAD DATA
     

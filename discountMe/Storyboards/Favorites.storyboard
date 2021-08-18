@@ -13,7 +13,7 @@
         <scene sceneID="w1x-ET-eWt">
             <objects>
                 <navigationController id="HzX-vs-ofX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Favorites" image="icons8-heart-30" id="uvh-zT-Xow"/>
+                    <tabBarItem key="tabBarItem" tag="3" title="Favorites" image="icons8-heart-30" id="uvh-zT-Xow"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kPt-un-fo5">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -115,7 +115,7 @@
                             <constraint firstItem="Hqo-hG-QfD" firstAttribute="bottom" secondItem="xMA-cU-Kym" secondAttribute="bottom" id="yid-MC-q4T"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Favorites" image="icons8-heart-30" id="syR-VW-j8B"/>
+                    <tabBarItem key="tabBarItem" tag="3" title="Favorites" image="icons8-heart-30" id="syR-VW-j8B"/>
                     <navigationItem key="navigationItem" id="Tmh-Mj-Wgx"/>
                     <connections>
                         <outlet property="favoritesTableView" destination="xMA-cU-Kym" id="6IY-i4-qhG"/>
@@ -130,7 +130,7 @@
         <image name="PngItem_6619328" width="916" height="917"/>
         <image name="background.png" width="750" height="1334"/>
         <image name="icons8-heart-30" width="30" height="30"/>
-        <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="plus" catalog="system" width="32" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

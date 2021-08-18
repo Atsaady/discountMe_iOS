@@ -10,20 +10,14 @@ import FirebaseAuth
 import Firebase
 import FirebaseFirestore
 
-
 class SignUpViewController: UIViewController {
 
     
     @IBOutlet weak var firstNameTextField: UITextField!
-    
     @IBOutlet weak var lastNameTextField: UITextField!
-    
     @IBOutlet weak var emailTextField: UITextField!
-    
     @IBOutlet weak var passwordTextField: UITextField!
-    
     @IBOutlet weak var signUpButton: UIButton!
-    
     @IBOutlet weak var errorLabel: UILabel!
     
     
@@ -71,7 +65,8 @@ class SignUpViewController: UIViewController {
 
     @IBAction func signUpTapped(_ sender: Any) {
         
-        let user = User()
+        let user = User(context: context)
+        print(user)
         // Validate the fields
         let error = validateFields()
         if error != nil {
@@ -83,6 +78,7 @@ class SignUpViewController: UIViewController {
             user.lastName = lastNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             user.email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             user.password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            print(user)
             
             Auth.auth().createUser(withEmail: user.email!, password: user.password!) { (result, err) in
                 // Check for errors
@@ -92,20 +88,15 @@ class SignUpViewController: UIViewController {
                 } else {
                     
                     // User was created successfully, now store the first name and last name
-                    let db = Firestore.firestore()
-                    db.collection("users").addDocument(data: ["firstName": user.firstName!,
-                      "lastName": user.lastName!, "uid": result!.user.uid]){ (error) in
-                        if error != nil {
-                            // Show error message
-                            self.showError("An error was occurred while saving user data. Try again later")
-                        }
-                        user.id = result!.user.uid
-                        // TODO Add user to user list
-                    }
+                    user.id = result?.user.uid
+                    print(user)
+                    Model.instance.addUser(user: user)
+                    
                     // Transition to the home screen
                     self.transitionToHome()
                 }
             }
+            
         }
 
         

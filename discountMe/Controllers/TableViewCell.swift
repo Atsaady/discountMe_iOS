@@ -12,7 +12,6 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var dealImageView: UIImageView!
     @IBOutlet weak var dealNameLabel: UILabel!
     @IBOutlet weak var idLabel: UILabel!
-    
     @IBOutlet weak var descriptionLabel: UILabel!
     
     override func awakeFromNib() {
@@ -25,13 +24,6 @@ class TableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
 
-    @IBAction func onTapDealExpand(_ sender: Any) {
-        let expandedVC = ExpandedDealViewController(nibName: "ExpandedDealViewController", bundle: nil)
-        expandedVC.addDealImageView = dealImageView
-        expandedVC.headlineLabel = dealNameLabel
-        expandedVC.descriptionLabel = descriptionLabel
-    }
-    
-    
 }

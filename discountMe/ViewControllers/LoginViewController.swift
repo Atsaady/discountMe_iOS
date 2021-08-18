@@ -14,12 +14,8 @@ class LoginViewController: UIViewController {
 
     
     @IBOutlet weak var emailTextField: UITextField!
-    
     @IBOutlet weak var passwordTextField: UITextField!
-    
-    
     @IBOutlet weak var loginButton: UIButton!
-    
     @IBOutlet weak var errorLabel: UILabel!
     
     
@@ -82,7 +78,7 @@ class LoginViewController: UIViewController {
                     self.errorLabel.text = error!.localizedDescription
                     self.errorLabel.alpha = 1
                 } else {
-                    
+                    Constants.uid = result!.user.uid
                     self.transitionToHome()
                 }
             }

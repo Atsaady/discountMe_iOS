@@ -17,13 +17,22 @@ class ExpandedDealViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        NotificationCenter.default.addObserver(self, selector: #selector(didGetNotification), name:Notification.Name("headline"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(didGetNotification), name:Notification.Name("description"), object: nil)
     }
 
-    @IBAction func onTapAddToFavorites(_ sender: UIButton) {
-        let icon = UIImage(named: "icons8-heart-30")
-        sender.setImage(icon, for: UIControl.State.normal)
+    @objc func didGetNotification(_ notification: Notification) {
+        let headline = notification.object as! String?
+        let description = notification.object as! String?
+        headlineLabel.text = headline
+        descriptionLabel.text = description
     }
     
+    @IBAction func onTapAddToFavorites(_ sender: UIButton) {
+        let icon = UIImage(named: "icons8-heart-30")
+        addToFavoritesButton.setImage(icon, for: UIControl.State.normal)
+        // Add to favorites
+        dismiss(animated: true, completion: nil)
+    }
+
 }

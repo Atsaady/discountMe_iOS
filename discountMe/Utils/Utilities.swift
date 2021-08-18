@@ -86,4 +86,9 @@ class Utilities {
         navBar.setNavigationBarHidden(true, animated: true)
     }
     
+    static func generateId() -> String{
+        let number = Int.random(in: 0..<1000)
+        return String(number)
+    }
+    
 }

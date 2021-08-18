@@ -11,7 +11,6 @@ class ViewController: UIViewController {
     
     
     @IBOutlet weak var loginButton: UIButton!
-    
     @IBOutlet weak var signUpButton: UIButton!
     
     override func viewDidLoad() {
@@ -27,10 +26,6 @@ class ViewController: UIViewController {
         Utilities.styleFilledHomeButton(signUpButton)
         Utilities.styleFilledHomeButton(loginButton)
         
-    }
-    
-    @IBAction func unwindToFirst(segue: UIStoryboardSegue){
-        print("unwind to first segue")
     }
     
 }

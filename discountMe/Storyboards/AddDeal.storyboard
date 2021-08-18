@@ -12,7 +12,7 @@
         <scene sceneID="UbM-3g-Iv2">
             <objects>
                 <navigationController id="6zC-Le-n6i" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Add Deal" image="icons8-add-30" id="X8l-hu-mYv"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="Add Deal" image="icons8-add-30" id="X8l-hu-mYv"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="esA-7A-laj">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -113,7 +113,7 @@
                             <constraint firstItem="eYh-Xg-BHK" firstAttribute="top" secondItem="7Tp-hz-JC5" secondAttribute="bottom" constant="20" id="y6b-ar-2gK"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Add Deal" image="icons8-add-30" id="pn4-qm-2Zl"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="Add Deal" image="icons8-add-30" id="pn4-qm-2Zl"/>
                     <navigationItem key="navigationItem" id="ofv-hl-y2J"/>
                     <connections>
                         <outlet property="addDealButton" destination="6Ly-hQ-dR7" id="u5B-b9-T0K"/>
