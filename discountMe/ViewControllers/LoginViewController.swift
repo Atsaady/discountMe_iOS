@@ -14,12 +14,8 @@ class LoginViewController: UIViewController {
 
     
     @IBOutlet weak var emailTextField: UITextField!
-    
     @IBOutlet weak var passwordTextField: UITextField!
-    
-    
     @IBOutlet weak var loginButton: UIButton!
-    
     @IBOutlet weak var errorLabel: UILabel!
     
     
@@ -38,7 +34,7 @@ class LoginViewController: UIViewController {
         // Style the elements
         Utilities.styleTextField(emailTextField)
         Utilities.styleTextField(passwordTextField)
-        Utilities.styleFilledButton(loginButton)
+        Utilities.styleFilledHomeButton(loginButton)
         
     }
 
@@ -82,7 +78,7 @@ class LoginViewController: UIViewController {
                     self.errorLabel.text = error!.localizedDescription
                     self.errorLabel.alpha = 1
                 } else {
-                    
+                    Constants.uid = result!.user.uid
                     self.transitionToHome()
                 }
             }
@@ -96,7 +92,7 @@ class LoginViewController: UIViewController {
     
     func transitionToHome(){
         
-        let homeTabBarController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeTabBarController) as? HomeTabBarController
+        let homeTabBarController = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.homeTabBarController) as? HomeTabBarController
         
         view.window?.rootViewController = homeTabBarController
         view.window?.makeKeyAndVisible()

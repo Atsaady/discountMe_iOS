@@ -41,9 +41,6 @@ class Utilities {
     }
     
     static func styleFilledHomeButton(_ button:UIButton) {
-        
-        // Filled rounded corner style
-        // button.backgroundColor = UIColor.init(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
         button.layer.cornerRadius = 15.0
     }
     
@@ -87,6 +84,11 @@ class Utilities {
     
     static func hideNavBar(navBar: UINavigationController) {
         navBar.setNavigationBarHidden(true, animated: true)
+    }
+    
+    static func generateId() -> String{
+        let number = Int.random(in: 0..<1000)
+        return String(number)
     }
     
 }
