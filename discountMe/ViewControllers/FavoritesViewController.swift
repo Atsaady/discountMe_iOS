@@ -12,7 +12,7 @@ class FavoritesViewController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var favoritesTableView: UITableView!
     
     var data = [Favorite]()
-    
+    var favorite = Favorite()
     
     override func viewDidLoad() {
         super.viewDidLoad()

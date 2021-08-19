@@ -32,7 +32,17 @@ public class Deal: NSManagedObject {
         return deal
     }
 
-
+    static func edit(id: String, headline: String, dealDescription: String, imageUrl: String) -> Deal {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let deal = Deal(context: context)
+        deal.id = id
+        deal.headline = headline
+        deal.dealDescription = dealDescription
+        deal.imageUrl = imageUrl
+        return deal
+    }
+    
+    
     func toJson() -> [String: Any] {
         var json = [String: Any]()
         json["id"] = id!

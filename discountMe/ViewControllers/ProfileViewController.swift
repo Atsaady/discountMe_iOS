@@ -8,8 +8,6 @@
 import UIKit
 import FirebaseAuth
 let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-let userId = Constants.uid
-let user = Model.instance.getUserById(id: userId)
 
 class ProfileViewController: UIViewController {
     
@@ -23,20 +21,7 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        insertData()
         canEdit(answer: false)
-        // Do any additional setup after loading the view.
-    }
-    
-    func insertData() {
-        user?.id = Auth.auth().currentUser?.uid
-        user?.firstName = firstNameField.text
-        user?.lastName = lastNameField.text
-        user?.email = emailField.text
-        user?.password = passwordField.text
-        passwordField.isSecureTextEntry = true
-        
-        firstNameField.placeholder = user?.firstName
         
     }
     
@@ -45,12 +30,15 @@ class ProfileViewController: UIViewController {
         if error != nil {
             showError(error!)
         } else {
-            
+            validateFields()
+            let edit = User.edit(firstName: firstNameField.text!, lastName: lastNameField.text!, email: emailField.text!, password: passwordField.text!, imageUrl: "")
+            print(edit)
         }
     }
     
     @IBAction func onTapEditBtn(_ sender: Any) {
         canEdit(answer: true)
+        
     }
     
     
@@ -87,15 +75,15 @@ class ProfileViewController: UIViewController {
     
     func canEdit(answer: Bool){
         if answer == false{
-            firstNameField.allowsEditingTextAttributes = false
-            lastNameField.allowsEditingTextAttributes = false
-            emailField.allowsEditingTextAttributes = false
-            passwordField.allowsEditingTextAttributes = false
+            firstNameField.isUserInteractionEnabled = false
+            lastNameField.isUserInteractionEnabled = false
+            emailField.isUserInteractionEnabled = false
+            passwordField.isUserInteractionEnabled = false
         } else {
-            firstNameField.allowsEditingTextAttributes = true
-            lastNameField.allowsEditingTextAttributes = true
-            emailField.allowsEditingTextAttributes = true
-            passwordField.allowsEditingTextAttributes = true
+            firstNameField.isUserInteractionEnabled = true
+            lastNameField.isUserInteractionEnabled = true
+            emailField.isUserInteractionEnabled = true
+            passwordField.isUserInteractionEnabled = true
         }
         
     }

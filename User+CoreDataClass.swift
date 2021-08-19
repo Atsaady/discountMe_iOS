@@ -49,6 +49,17 @@ public class User: NSManagedObject {
         return user
     }
     
+    static func edit(firstName: String, lastName: String, email: String, password: String, imageUrl: String) -> User {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let user = User(context: context)
+        user.firstName = firstName
+        user.lastName = lastName
+        user.email = email
+        user.password = password
+        user.imageUrl = imageUrl
+        return user
+    }
+    
     func toJson() -> [String: Any] {
         var json = [String: Any]()
         json["id"] = id!

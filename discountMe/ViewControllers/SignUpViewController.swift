@@ -66,7 +66,6 @@ class SignUpViewController: UIViewController {
     @IBAction func signUpTapped(_ sender: Any) {
         
         let user = User(context: context)
-        print(user)
         // Validate the fields
         let error = validateFields()
         if error != nil {
@@ -78,7 +77,6 @@ class SignUpViewController: UIViewController {
             user.lastName = lastNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             user.email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             user.password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-            print(user)
             
             Auth.auth().createUser(withEmail: user.email!, password: user.password!) { (result, err) in
                 // Check for errors
@@ -89,7 +87,6 @@ class SignUpViewController: UIViewController {
                     
                     // User was created successfully, now store the first name and last name
                     user.id = result?.user.uid
-                    print(user)
                     Model.instance.addUser(user: user)
                     
                     // Transition to the home screen

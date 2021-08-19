@@ -31,7 +31,7 @@ class ExpandedDealViewController: UIViewController {
     @IBAction func onTapAddToFavorites(_ sender: UIButton) {
         let icon = UIImage(named: "icons8-heart-30")
         addToFavoritesButton.setImage(icon, for: UIControl.State.normal)
-        // Add to favorites
+        
         dismiss(animated: true, completion: nil)
     }
 
